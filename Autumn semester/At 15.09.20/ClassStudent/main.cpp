@@ -23,24 +23,37 @@ class Student{
        }
 };
 class StudentList{
-  public:
+  private:
 
-      list<string> st;
+     vector<string> Spisok;
 
 
-      void add(list st) //добавить студента
+      void add(string v) //добавить студента
       {
-        st.push_front("Karpov.F.V");
+        //int i=0;
+        //for(i, i<)
+        Spisok.push_front(v);
+        //st.push_front("Licenko.E.C");
+        //st.push_front("Gorelov.D.D");
       }
-      void getCount(list st)
+      int getCount()
       {
+        return Spisok.size();
+      }
+      void Print()
+      {
+          while(!st.empty())
+          {
+              cout<<"students: "<<st.front()<<endl;
+              st.pop_front();
+          }
 
       }
 
 
       //Student at(int i);   //получить студента по номеру
-      int getCount();    //получить количество студентов
-      void Print();   //вывести всех студентов на экран(по одному на строке).ѕри реализации не стоит вносить изменени€ в класс Student, в начадьный момент времени список пуст. ¬ майне продемонстрируйте работу на примере одного об№екта списка - покажите работу всех методов  и общий функционал класса.
+      //int getCount();    //получить количество студентов
+        //void Print(); //вывести всех студентов на экран(по одному на строке).ѕри реализации не стоит вносить изменени€ в класс Student, в начадьный момент времени список пуст. ¬ майне продемонстрируйте работу на примере одного об№екта списка - покажите работу всех методов  и общий функционал класса.
 
 };
 
@@ -55,6 +68,21 @@ int main()
      vasya.Print();
      petya.Print();
      vasya.fio = "vvvv";
+
+
+
+     StudentList Spisok;
+     Spisok.add(vasya);
+     Spisok.add(petya);
+
+     cout << Spisok.getCount() << endl;
+     Spisok.at(1).Print();
+
+     Spisok.Print();
+
+
+
+     fedya.add("Karpov.F.V");
      return 0;
 }
 
