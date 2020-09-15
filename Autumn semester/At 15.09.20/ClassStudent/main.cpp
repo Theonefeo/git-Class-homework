@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <vector>
 
 using namespace std;
 
@@ -23,16 +23,16 @@ class Student{
        }
 };
 class StudentList{
-  private:
+  public:
 
      vector<string> Spisok;
 
 
-      void add(string v) //добавить студента
+     void add(string v) //добавить студента
       {
         //int i=0;
         //for(i, i<)
-        Spisok.push_front(v);
+        Spisok.push_back(v);
         //st.push_front("Licenko.E.C");
         //st.push_front("Gorelov.D.D");
       }
@@ -42,10 +42,9 @@ class StudentList{
       }
       void Print()
       {
-          while(!st.empty())
+           for(int i=0; i<Spisok.size(); i++)
           {
-              cout<<"students: "<<st.front()<<endl;
-              st.pop_front();
+              cout<<"students: "<<Spisok.at(i)<<endl;
           }
 
       }
@@ -71,18 +70,19 @@ int main()
 
 
 
-     StudentList Spisok;
-     Spisok.add(vasya);
-     Spisok.add(petya);
+     StudentList Spisok1;
+     Spisok1.add("Misha.P.P");
+     Spisok1.add("Jenya.V.V");
 
-     cout << Spisok.getCount() << endl;
-     Spisok.at(1).Print();
+     cout << Spisok1.getCount() << endl;
+     cout<<Spisok1.Spisok.at(1)<<endl; //.Print();
 
-     Spisok.Print();
+     Spisok1.Print();
+     cout<<endl;
 
 
 
-     fedya.add("Karpov.F.V");
+
      return 0;
 }
 
