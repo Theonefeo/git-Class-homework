@@ -24,36 +24,30 @@ class Student{
 };
 class StudentList{
   public:
+     vector<Student> listofstudents;
 
-     vector<string> Spisok;
 
-
-     void add(string v) //добавить студента
+      void add(Student st) //РњРµС‚РѕРґ РґРѕР±Р°РІР»РµРЅРёСЏ СЃС‚СѓРґРµРЅС‚РѕРІ
       {
-        //int i=0;
-        //for(i, i<)
-        Spisok.push_back(v);
-        //st.push_front("Licenko.E.C");
-        //st.push_front("Gorelov.D.D");
+        listofstudents.push_back(st);
+      }
+      Student at(int i)
+      {
+        return listofstudents.at(i);
       }
       int getCount()
       {
-        return Spisok.size();
+        return listofstudents.size();
       }
       void Print()
       {
-           for(int i=0; i<Spisok.size(); i++)
+          cout<<"РЎС‚СѓРґРµРЅС‚С‹: \n";
+          for(int i=0; i<listofstudents.size(); i++)
           {
-              cout<<"students: "<<Spisok.at(i)<<endl;
-          }
-
+              listofstudents.at(i).Print();
+              cout<<endl;
+           }
       }
-
-
-      //Student at(int i);   //получить студента по номеру
-      //int getCount();    //получить количество студентов
-        //void Print(); //вывести всех студентов на экран(по одному на строке).При реализации не стоит вносить изменения в класс Student, в начадьный момент времени список пуст. В майне продемонстрируйте работу на примере одного обЬекта списка - покажите работу всех методов  и общий функционал класса.
-
 };
 
 
@@ -66,24 +60,21 @@ int main()
      vasya.moveToNextYear();
      vasya.Print();
      petya.Print();
-     vasya.fio = "vvvv";
 
+     cout<<endl<<"/////////////Seconds///////////"<<endl;
 
+     StudentList Spisok;
+     Spisok.add(vasya);
+     Spisok.add(petya);
 
-     StudentList Spisok1;
-     Spisok1.add("Misha.P.P");
-     Spisok1.add("Jenya.V.V");
+     cout<<"РЎС‚СѓРґРµРЅС‚ РїРѕ РЅРѕРјРµСЂСѓ.... ";
+     Spisok.at(1).Print();
 
-     cout << Spisok1.getCount() << endl;
-     cout<<Spisok1.Spisok.at(1)<<endl; //.Print();
+     cout <<endl<<"Р§РёСЃР»Рѕ СЃС‚СѓРґРµРЅС‚РѕРІ: "<< Spisok.getCount() << endl;
 
-     Spisok1.Print();
-     cout<<endl;
+     Spisok.Print();
 
-
-
+    cout<<endl;
 
      return 0;
 }
-
-
