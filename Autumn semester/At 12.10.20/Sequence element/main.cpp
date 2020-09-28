@@ -11,10 +11,7 @@ private:
 public:
     SortSeq();   //Empty sequence конструктор
     ~SortSeq(); //деструктор
-    void add(int x)
-    {
-        seque.push_back(x);
-    }
+    void add(int x) {seque.push_back(x);}
     int Count();
     int&get(int i);
     void remove(int i);
@@ -60,13 +57,7 @@ void SortSeq::print()  //Printing the sequence
 
 int main()
 {
-    SortSeq *Sequence{}; //= new SortSeq;
-    /*cout<<"To create a sequence press 1";
-    int b;
-    cin>>b;
-    if(b==1)
-     {*/
-    //Sequence = new SortSeq;
+    SortSeq *Sequence{};
     int menuPos;
     int i;
     cout<<endl<<"Please enter the 0 for exit";
@@ -76,13 +67,12 @@ int main()
     cout<<endl<<"Please enter the 4 for to get an item by index";
     cout<<endl<<"Please enter the 5 for delete sequence ";
     cout<<endl<<"Please enter the 6 for delete an item by index"<<endl;
+    cout<<"Please enter command: ";
+    cin>>menuPos;
     while(menuPos)
     {
-        cout<<"Please enter command: ";
-        cin>>menuPos;
         switch(menuPos)
         {
-        //Sequence.print();
         case 0:
         {
             cout<<"End of work"<<endl;
@@ -90,7 +80,6 @@ int main()
         }
         case 1:
         {
-            //cout<<"End of work"<<endl;
             Sequence = new SortSeq;
             break;
         }
@@ -111,7 +100,6 @@ int main()
         {
             cout<<endl<<"Please enter the element for the receivings: ";
             cin>>i;
-            //int a = Sequence.get(i);
             cout<<Sequence->get(i)<<endl;
             break;
         }
@@ -135,18 +123,12 @@ int main()
             break;
         }
         }
-        if(menuPos!=5 || menuPos!=0)
+        if(menuPos!=5)
         {
-
-            Sequence->print();
+            if(menuPos!=0){Sequence->print();}
         }
-        //}
+        cout<<"Please enter command: ";
+        cin>>menuPos;
     }
-    /*else
-    {
-         b = 0;
-         cout<<"Enter 2 ";
-    }*/
-
     return 0;
 }
