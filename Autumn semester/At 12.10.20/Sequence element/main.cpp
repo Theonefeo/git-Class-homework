@@ -5,114 +5,148 @@ using namespace std;
 
 class SortSeq
 {
-    private:
+private:
     vector<int> seque;
 
-    public:
+public:
     SortSeq();   //Empty sequence конструктор
     ~SortSeq(); //деструктор
-    void add(int x) {seque.push_back(x);}
+    void add(int x)
+    {
+        seque.push_back(x);
+    }
     int Count();
     int&get(int i);
     void remove(int i);
     void print();
 
 };
-   SortSeq::SortSeq()
+SortSeq::SortSeq()
+{
+    seque.clear(); //Clearing a vector of elements
+    vector<int>().swap(seque); //Clearing the memory space that the vector used to occupy
+}
+SortSeq::~SortSeq()
+{
+}
+int SortSeq::Count()
+{
+    return seque.size();
+}
+int &SortSeq::get(int i)  //Getting the sequence element
+{
+    return seque.at(i);
+}
+void SortSeq::remove(int i)  //Delete items
+{
+    if(i<seque.size())
     {
-        seque.clear(); //Clearing a vector of elements
-        vector<int>().swap(seque); //Clearing the memory space that the vector used to occupy
-    }
-    SortSeq::~SortSeq()
-    {
-    }
-    int SortSeq::Count()
-        {
-            return seque.size();
-        }
-    int &SortSeq::get(int i)  //Getting the sequence element
-        {
-        return seque.at(i);
-        }
-    void SortSeq::remove(int i)  //Delete items
-        {
         seque.erase(seque.begin() + i);
-
-        }
-    void SortSeq::print()  //Printing the sequence
-        {
-            cout<<"{";
-            for(int pi=0; pi<seque.size(); pi++)
-            {
-             cout<<" "<<seque.at(pi);
-            }
-            cout<<"}"<<endl;
-        }
+    }
+    else
+    {
+        cout<<"Wrong index"<<endl;
+    }
+}
+void SortSeq::print()  //Printing the sequence
+{
+    cout<<"{";
+    for(int pi=0; pi<seque.size(); pi++)
+    {
+        cout<<" "<<seque.at(pi);
+    }
+    cout<<"}"<<endl;
+}
 
 int main()
 {
-   ? SortSeq *Sequence{} = new SortSeq;
+    SortSeq *Sequence{}; //= new SortSeq;
+    /*cout<<"To create a sequence press 1";
+    int b;
+    cin>>b;
+    if(b==1)
+     {*/
+    //Sequence = new SortSeq;
     int menuPos;
     int i;
     cout<<endl<<"Please enter the 0 for exit";
+    cout<<endl<<"Please enter the 1 for to create sequence";
     cout<<endl<<"Please enter the 2 for to add an element to a vector";
     cout<<endl<<"Please enter the 3 for to print the number of elements in a vector";
     cout<<endl<<"Please enter the 4 for to get an item by index";
-    //cout<<endl<<"Please enter the 5 for delete sequence ";
+    cout<<endl<<"Please enter the 5 for delete sequence ";
     cout<<endl<<"Please enter the 6 for delete an item by index"<<endl;
     while(menuPos)
     {
-    cout<<"Please enter command: ";
-    cin>>menuPos;
-    switch(menuPos)
-    { Sequence.print();
-    case 0:
+        cout<<"Please enter command: ";
+        cin>>menuPos;
+        switch(menuPos)
         {
-        cout<<"End of work"<<endl;
-        break;
-        }
-    case 2:
+        //Sequence.print();
+        case 0:
         {
-        int x; //Declaration of the element we want to add
-        cout<<"Please enter the element sequence "<<endl;
-        cin>>x;
-        Sequence.add(x);
-        break;
+            cout<<"End of work"<<endl;
+            break;
         }
-    case 3:
+        case 1:
         {
-        cout<<endl<<Sequence.Count()<<endl;
-        break;
+            //cout<<"End of work"<<endl;
+            Sequence = new SortSeq;
+            break;
         }
-    case 4:
+        case 2:
         {
-        cout<<endl<<"Please enter the element sequence for the receivings: ";
-        cin>>i;
-        //int a = Sequence.get(i);
-        cout<<Sequence.get(i)<<endl;
-        break;
+            int x; //Declaration of the element we want to add
+            cout<<"Please enter the element "<<endl;
+            cin>>x;
+            Sequence->add(x);
+            break;
         }
-    case 5:
+        case 3:
         {
-        //Delete sequence
-        break;
+            cout<<endl<<Sequence->Count()<<endl;
+            break;
         }
-    case 6:
+        case 4:
         {
-        cout<<"Please enter index of element for delete: ";
-        cin>>i;
-        cout<<endl;
-        Sequence.remove(i);
-        break;
+            cout<<endl<<"Please enter the element for the receivings: ";
+            cin>>i;
+            //int a = Sequence.get(i);
+            cout<<Sequence->get(i)<<endl;
+            break;
         }
-    default:
+        case 5:
         {
-        cout<<"Wrong command number!!!"<<endl;
-        break;
+            //Delete sequence
+            delete Sequence;
+            break;
         }
+        case 6:
+        {
+            cout<<"Please enter index of element for delete: ";
+            cin>>i;
+            cout<<endl;
+            Sequence->remove(i);
+            break;
+        }
+        default:
+        {
+            cout<<"Wrong command number!!!"<<endl;
+            break;
+        }
+        }
+        if(menuPos!=5 || menuPos!=0)
+        {
+
+            Sequence->print();
+        }
+        //}
     }
-     Sequence.print();
-    }
+    /*else
+    {
+         b = 0;
+         cout<<"Enter 2 ";
+    }*/
 
     return 0;
 }
