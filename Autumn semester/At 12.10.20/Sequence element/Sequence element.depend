@@ -3,7 +3,16 @@
 	<iostream>
 	<vector>
 
-1601328171 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/main.cpp
+1601506998 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/main.cpp
 	<iostream>
 	<vector>
+	"SortSeq.h"
+
+1601504873 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.h
+	<vector>
+
+1601506311 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.cpp
+	<iostream>
+	<vector>
+	"SortSeq.h"
 

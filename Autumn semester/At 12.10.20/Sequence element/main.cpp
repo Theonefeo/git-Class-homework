@@ -1,59 +1,8 @@
 #include <iostream>
 #include <vector>
+#include "SortSeq.h"
 
 using namespace std;
-
-class SortSeq
-{
-private:
-    vector<int> seque;
-
-public:
-    SortSeq();   //Empty sequence конструктор
-    ~SortSeq(); //деструктор
-    void add(int x) {seque.push_back(x);}
-    int Count();
-    int&get(int i);
-    void remove(int i);
-    void print();
-
-};
-SortSeq::SortSeq()
-{
-    seque.clear(); //Clearing a vector of elements
-    vector<int>().swap(seque); //Clearing the memory space that the vector used to occupy
-}
-SortSeq::~SortSeq()
-{
-}
-int SortSeq::Count()
-{
-    return seque.size();
-}
-int &SortSeq::get(int i)  //Getting the sequence element
-{
-    return seque.at(i);
-}
-void SortSeq::remove(int i)  //Delete items
-{
-    if(i<seque.size())
-    {
-        seque.erase(seque.begin() + i);
-    }
-    else
-    {
-        cout<<"Wrong index"<<endl;
-    }
-}
-void SortSeq::print()  //Printing the sequence
-{
-    cout<<"{";
-    for(int pi=0; pi<seque.size(); pi++)
-    {
-        cout<<" "<<seque.at(pi);
-    }
-    cout<<"}"<<endl;
-}
 
 int main()
 {
@@ -80,41 +29,59 @@ int main()
         }
         case 1:
         {
-            Sequence = new SortSeq;
+            if(Sequence==NULL)
+            {
+                Sequence = new SortSeq;
+            }
+            else
+             cout<<endl<<"WRONG COMMAND"<<endl;
             break;
         }
         case 2:
         {
-            int x; //Declaration of the element we want to add
-            cout<<"Please enter the element "<<endl;
-            cin>>x;
-            Sequence->add(x);
+            if(Sequence==NULL)
+            {
+                int x; //Declaration of the element we want to add
+                cout<<"Please enter the element "<<endl;
+                cin>>x;
+                Sequence->add(x);
+            }
             break;
         }
         case 3:
         {
-            cout<<endl<<Sequence->Count()<<endl;
+            if(Sequence!=NULL)
+            {
+                cout<<endl<<Sequence->Count()<<endl;
+            }
             break;
         }
         case 4:
         {
-            cout<<endl<<"Please enter the element for the receivings: ";
-            cin>>i;
-            cout<<Sequence->get(i)<<endl;
+            if(Sequence!=NULL)
+            {
+                cout<<endl<<"Please enter the element for the receivings: ";
+                cin>>i;
+                cout<<Sequence->get(i)<<endl;
+            }
             break;
         }
         case 5:
         {
-            //Delete sequence
+            //*Sequence.clear();
+            //vector<int>().swap(*Sequence);
             delete Sequence;
             break;
         }
         case 6:
         {
-            cout<<"Please enter index of element for delete: ";
-            cin>>i;
-            cout<<endl;
-            Sequence->remove(i);
+            if(Sequence!=NULL)
+            {
+                cout<<"Please enter index of element for delete: ";
+                cin>>i;
+                cout<<endl;
+                Sequence->remove(i);
+            }
             break;
         }
         default:
@@ -123,9 +90,9 @@ int main()
             break;
         }
         }
-        if(menuPos!=5)
+        if(Sequence!=NULL)
         {
-            if(menuPos!=0){Sequence->print();}
+            Sequence->print();
         }
         cout<<"Please enter command: ";
         cin>>menuPos;
