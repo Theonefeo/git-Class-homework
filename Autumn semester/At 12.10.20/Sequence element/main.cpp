@@ -6,15 +6,16 @@ using namespace std;
 
 int main()
 {
-    SortSeq *Sequence{};
+    SortSeq *Sequence = nullptr;
     int menuPos;
     int i;
+    string command;
     cout<<endl<<"Please enter the 0 for exit";
-    cout<<endl<<"Please enter the 1 for to create sequence";
+    cout<<endl<<"Please enter the 1 for to create or delete sequence";
     cout<<endl<<"Please enter the 2 for to add an element to a vector";
     cout<<endl<<"Please enter the 3 for to print the number of elements in a vector";
     cout<<endl<<"Please enter the 4 for to get an item by index";
-    cout<<endl<<"Please enter the 5 for delete sequence ";
+    //cout<<endl<<"Please enter the 5 for delete sequence ";
     cout<<endl<<"Please enter the 6 for delete an item by index"<<endl;
     cout<<"Please enter command: ";
     cin>>menuPos;
@@ -29,12 +30,44 @@ int main()
         }
         case 1:
         {
-            if(Sequence==NULL)
+            cout<<"Enter exit to exit\n";
+            cout<<"Enter create to add sequence\n";
+            cout<<"Enter delete to destroy sequence\n";
+            cin>>command;
+            while(command != "exit")
+            {
+                cin>>command;
+                if(command == "create")
+                {
+                    if(Sequence) //Sequence!=nullptr
+                    {
+                        cout<<"Sequence already created\n";
+                    }
+                    else
+                    {
+                        Sequence = new SortSeq();
+
+                    }
+                }
+                else if(command == "delete")
+                {
+                    if(!Sequence)
+                    {
+                        cout<<"No object for deletion\n";
+                    }
+                    else
+                    {
+                        delete Sequence;
+                    }
+                }
+            }
+
+            /*if(Sequence==NULL)
             {
                 Sequence = new SortSeq;
             }
             else
-             cout<<endl<<"WRONG COMMAND"<<endl;
+             cout<<endl<<"WRONG COMMAND"<<endl;*/
             break;
         }
         case 2:

@@ -4,8 +4,6 @@
 
 SortSeq::SortSeq()
 {
-    seque.clear(); //Clearing a vector of elements
-    vector<int>().swap(seque); //Clearing the memory space that the vector used to occupy
 }
 SortSeq::~SortSeq()
 {
@@ -14,7 +12,6 @@ int SortSeq::Count()
 {
     if(seque.empty())
     {
-        cout<<endl<<"Wrong command!!!!!!"<<endl;
     }
     else
     {
@@ -25,12 +22,13 @@ int &SortSeq::get(int i)  //Getting the sequence element
 {
     if(seque.empty())
     {
-        cout<<endl<<"Wrong command!!!!!!"<<endl;
+        //cout<<endl<<"Wrong command!!!!!!"<<endl;
     }
-    else
+    else if(i<0)
     {
         return seque.at(i);
     }
+    return 0;
 }
 void SortSeq::remove(int i)  //Delete items
 {
@@ -38,14 +36,12 @@ void SortSeq::remove(int i)  //Delete items
     {
         if(seque.empty())
         {
-            cout<<endl<<"Wrong command!!!!!!"<<endl;
         }
         else
         seque.erase(seque.begin() + i);
     }
     else
     {
-        cout<<"Wrong index"<<endl;
     }
 }
 void SortSeq::print()  //Printing the sequence
@@ -57,9 +53,3 @@ void SortSeq::print()  //Printing the sequence
     }
     cout<<"}"<<endl;
 }
-/*
-void SortSeq::deleteseque()
-{
-    seque.clear(); //Clearing a vector of elements
-    vector<int>().swap(seque);
-}*/

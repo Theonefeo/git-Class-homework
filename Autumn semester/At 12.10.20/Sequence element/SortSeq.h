@@ -7,8 +7,6 @@ class SortSeq
 {
 private:
     vector<int> seque;
-    //void deleteseque() {seque.clear(); vector<int>().swap(seque);}
-
 public:
     SortSeq();   //Empty sequence конструктор
     ~SortSeq(); //деструктор
