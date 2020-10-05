@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "SortSeq.h"
 
 SortSeq::SortSeq()
@@ -12,6 +13,7 @@ int SortSeq::Count()
 {
     if(seque.empty())
     {
+        return 0;
     }
     else
     {
@@ -20,29 +22,11 @@ int SortSeq::Count()
 }
 int &SortSeq::get(int i)  //Getting the sequence element
 {
-    if(seque.empty())
-    {
-        //cout<<endl<<"Wrong command!!!!!!"<<endl;
-    }
-    else if(i<0)
-    {
-        return seque.at(i);
-    }
-    return 0;
+    return seque.at(i);
 }
 void SortSeq::remove(int i)  //Delete items
 {
-    if(i<seque.size())
-    {
-        if(seque.empty())
-        {
-        }
-        else
-        seque.erase(seque.begin() + i);
-    }
-    else
-    {
-    }
+    seque.erase(seque.begin() + i);
 }
 void SortSeq::print()  //Printing the sequence
 {

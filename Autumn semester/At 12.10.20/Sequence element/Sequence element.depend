@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1601302492 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\main.cpp
+1601912792 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\main.cpp
 	<iostream>
 	<vector>
+	<cstdlib>
+	"SortSeq.h"
 
 1601573135 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/main.cpp
 	<iostream>
@@ -15,4 +17,21 @@
 	<iostream>
 	<vector>
 	"SortSeq.h"
+
+1601911297 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.h
+	<vector>
+	<algorithm>
+
+1601911297 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	"SortSeq.h"
+
+1601908401 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\new_delete_checker.hpp
+	<cstdlib>
+	<iostream>
+	<map>
+	<string>
+	<sstream>
 
