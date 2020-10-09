@@ -2,7 +2,7 @@
 #include <vector>
 #include <cstdlib>
 #include "SortSeq.h"
-//#include "new_delete_checker.hpp"
+#include "new_delete_checker.hpp"
 
 using namespace std;
 

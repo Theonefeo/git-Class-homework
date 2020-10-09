@@ -11,14 +11,7 @@ SortSeq::~SortSeq()
 }
 int SortSeq::Count()
 {
-    if(seque.empty())
-    {
-        return 0;
-    }
-    else
-    {
-        return seque.size();
-    }
+    return seque.size();
 }
 int &SortSeq::get(int i)  //Getting the sequence element
 {

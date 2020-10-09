@@ -5,17 +5,20 @@
 	<cstdlib>
 	"SortSeq.h"
 
-1601573135 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/main.cpp
+1602278571 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/main.cpp
 	<iostream>
 	<vector>
+	<cstdlib>
 	"SortSeq.h"
 
-1601570133 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.h
+1602278571 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.h
 	<vector>
+	<algorithm>
 
-1601573999 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.cpp
+1602278806 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.cpp
 	<iostream>
 	<vector>
+	<algorithm>
 	"SortSeq.h"
 
 1601911297 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.h
