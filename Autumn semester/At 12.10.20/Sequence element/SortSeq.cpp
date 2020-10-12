@@ -9,7 +9,7 @@ SortSeq::SortSeq()
 SortSeq::~SortSeq()
 {
 }
-int SortSeq::Count()
+int SortSeq::count()
 {
     return seque.size();
 }
