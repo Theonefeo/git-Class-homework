@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1602318506 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\10.10.20c\classlabs1\main.cpp
+	<iostream>
+	"cstdio"
+	"cstdlib"
+
