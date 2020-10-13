@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1601912792 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\main.cpp
+1602500818 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\main.cpp
 	<iostream>
 	<vector>
 	<cstdlib>
@@ -21,11 +21,11 @@
 	<algorithm>
 	"SortSeq.h"
 
-1601911297 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.h
+1602313089 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.h
 	<vector>
 	<algorithm>
 
-1601911297 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.cpp
+1602313090 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 12.10.20\sequence element\sortseq.cpp
 	<iostream>
 	<vector>
 	<algorithm>

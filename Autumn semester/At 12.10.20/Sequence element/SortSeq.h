@@ -21,7 +21,7 @@ public:
         seque.push_back(x);
         sort (seque.begin(), seque.end());
     }
-    int Count();
+    int count();
     int&get(int i);
     void remove(int i);
     void print();
