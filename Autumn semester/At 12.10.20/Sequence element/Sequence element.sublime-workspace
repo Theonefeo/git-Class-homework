@@ -1,0 +1,621 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"print_table\tabc"
+			],
+			[
+				"Lab",
+				"Lab7_data_base.php\tabc"
+			],
+			[
+				"scti",
+				"script\tabc"
+			],
+			[
+				"prin",
+				"println\t(HashTable.java)"
+			],
+			[
+				"wri",
+				"writeElementsCount\tabc"
+			],
+			[
+				"write",
+				"writeElementsToFout1\tabc"
+			],
+			[
+				"fout",
+				"fout2\tabc"
+			],
+			[
+				"cur",
+				"curFout\tabc"
+			],
+			[
+				"fou",
+				"fout1\tabc"
+			],
+			[
+				"file",
+				"fileA_and_fileB\tabc"
+			],
+			[
+				"si",
+				"sizeof\t(Lab4.php)"
+			],
+			[
+				"text",
+				"textarea\tTag"
+			],
+			[
+				"if",
+				"if\tif …"
+			],
+			[
+				"s",
+				"str\tabc"
+			],
+			[
+				"f",
+				"f_json\tabc"
+			],
+			[
+				"get_con",
+				"get_content_from_resource\tabc"
+			],
+			[
+				"id",
+				"id_local\tabc"
+			],
+			[
+				"fun",
+				"function\tabc"
+			],
+			[
+				"image",
+				"image3.jpg\tabc"
+			],
+			[
+				"len",
+				"lengh"
+			],
+			[
+				"le",
+				"lengh"
+			],
+			[
+				"for",
+				"for\tFor Loop"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"text2",
+				"text2_bez_probelov"
+			],
+			[
+				"max",
+				"maxWorldLengh"
+			],
+			[
+				"n",
+				"n"
+			],
+			[
+				"mai",
+				"main\tmain cpp"
+			],
+			[
+				"I",
+				"Imya"
+			],
+			[
+				"ma",
+				"main\tmain cpp"
+			],
+			[
+				"ind",
+				"ind_max"
+			],
+			[
+				"func",
+				"func3"
+			],
+			[
+				"en",
+				"endl\t(SeaBattle.cpp)"
+			],
+			[
+				"co",
+				"coordinaty"
+			],
+			[
+				"P",
+				"PcShoots"
+			],
+			[
+				"w",
+				"written"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"set",
+				"setArray"
+			],
+			[
+				"fo",
+				"for\tFor Loop"
+			],
+			[
+				"e",
+				"efforts"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"su",
+				"sum2"
+			],
+			[
+				"z",
+				"znacheniye\t(zadachaHolmsa.cpp)"
+			],
+			[
+				"enu",
+				"enumeration"
+			],
+			[
+				"N",
+				"N-1"
+			],
+			[
+				"main",
+				"main\tmain cpp"
+			],
+			[
+				"r",
+				"result"
+			],
+			[
+				"a",
+				"a\tTag"
+			],
+			[
+				"aud",
+				"audio\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"termi",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"term",
+				"Terminal: Open"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ter",
+				"Terminal View: Open Bash Terminal"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: laba"
+			],
+			[
+				"Snippet: la",
+				"Snippet: laba"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"scheme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"align",
+				"Preferences: Alignment File Settings – Syntax Specific – User"
+			],
+			[
+				"alig",
+				"Preferences: Alignment File Settings – Default"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"inste",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 170.0,
+		"history":
+		[
+			"date",
+			"data",
+			"time",
+			"cd /",
+			"cd workspase"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/Sequence element.cbp",
+		"/home/user/Документы/Книги/Компьютеры/LaTeX/output.txt",
+		"/home/user/lessons.tex",
+		"/home/user/workspace-java/info-board/InfoBoard/test/com/example/project/CalculatorTest.java",
+		"/home/user/workspace-java/TIJ4-code/examples/generics/Fill2.java",
+		"/home/user/Документы/ФИПМ 3/СПВЗ/студентам.txt",
+		"/home/user/eclipse/eclipse-fipm/eclipse/eclipse.ini",
+		"/home/user/eclipse/eclipse-java-2020-09-R/configuration/config.ini",
+		"/home/user/workspace-java/TIJ4-code/examples/gui/jnlp/filechooser.html",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/index.html",
+		"/home/user/garbage.cpp",
+		"/home/user/garb.cpp",
+		"/home/user/Загрузки/main.cpp",
+		"/home/user/workspace-java/info-board/InfoBoard/resources/org/lestvitsa/InfoBoard/InfoModel/lestvitsa-logo-white.svg",
+		"/home/user/Загрузки/bank-additional-full.csv",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/human.html",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/list.html",
+		"/home/user/Загрузки/stepic_lesson.tex",
+		"/home/user/Загрузки/Практика/08179208190209130208190208178208190.html",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/work_with_json.html",
+		"/home/user/workspace-java/info-board/InfoBoard/resources/org/lestvitsa/InfoBoard/InfoModel/lestvitsa-logo-gold.svg",
+		"/home/user/Загрузки/Практика(можно удалить)/3/lection3page.html",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab5.php",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab7_data_base.php",
+		"/media/user/KINGSTON/DEVELOPMENT/eclipse-fipm/eclipse/eclipse.ini",
+		"/home/user/Загрузки/Практика(можно удалить)/prakrika.html",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab4.php",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/balls.html",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab3.php",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab2.php",
+		"/home/user/.config/sublime-text-3/Packages/User/CodeFormatter.sublime-settings",
+		"/home/user/Загрузки/Практика/prakrika.html",
+		"/home/user/workspace-php/WebProgrammingLabs/db.txt",
+		"/home/user/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/user/Загрузки/testPage.html",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/scripts/balls_main.js",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/fragments.html",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/map.html",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/main.html",
+		"/home/user/Загрузки/json.json",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/styles/work_with_json_style.css",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/styles/ball_page_style.css",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/styles/style.css",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/scripts/main.js",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/index.html",
+		"/home/user/Загрузки/beginner-html-site-styled-gh-pages/main.js",
+		"/home/user/workspace-java/SAKOD/src/kursovaya/HashTable.java",
+		"/home/user/.config/sublime-merge/Packages/User/Commit Message.sublime-settings",
+		"/home/user/Документы/ФИПМ 2/САКОД/Lab2Hash.cpp",
+		"/home/user/.config/sublime-merge/Packages/User/Preferences.sublime-settings",
+		"/home/user/test.html",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab3_OrderStatistics.java",
+		"/home/user/Загрузки/git-coursework/Mycoursework/main.cpp",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab2_ArraysSorted.java",
+		"/home/user/workspace-cpp/DifferentPrograms/labsUTF8/FedyaCourceWork.cpp",
+		"/home/user/workspace-java/NmMap/.gitattributes",
+		"/home/user/Документы/ФИПМ 2/САКОД/Lab3Tree1.cpp",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab6.php",
+		"/home/user/workspace-php/WebProgrammingLabs/sftp-config.json",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab4_BinarySearch.java",
+		"/home/user/workspace-java/NmMap/src/main/resources/templates/templates/htmprogramm2.html",
+		"/home/user/workspace-cpp/ExternalSort/src/ExternalSortIntuit.cpp",
+		"/home/user/workspace-cpp/ExternalSort/src/ExternalSort.cpp",
+		"/home/user/main.cpp",
+		"/home/user/.bashrc",
+		"/home/user/workspace-php/WebProgrammingLabs/strategy.php",
+		"/var/www/html/strategy.php",
+		"/var/www/html/metanit/display.php",
+		"/var/www/html/metanit/index.html",
+		"/var/www/html/index.php",
+		"/var/www/html/str",
+		"/home/user/workspace-java/SAKOD/src/labs2/Lab2HashUTF.cpp",
+		"/home/user/.config/sublime-text-3/Packages/SFTP/Default (Linux).sublime-keymap",
+		"/home/user/test/utf8.php",
+		"/home/user/.config/sublime-text-3/Packages/CodeFormatter/Default (Linux).sublime-keymap",
+		"/home/user/.config/sublime-text-3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
+		"/home/user/workspace-java/SAKOD/src/labs/test2.java",
+		"/home/user/test/c",
+		"/home/user/test/Lab3.php",
+		"/home/user/Загрузки/Сторителлинг.txt",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab6_Tree.java",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab1.php",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab5_HashTable.cpp",
+		"/home/user/workspace-java/SAKOD/src/labs2/testProgram.cpp",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab5_Hash.java",
+		"/home/user/workspace-java/SAKOD/src/labs2/Lab2Hash.cpp",
+		"/home/user/workspace-java/SAKOD/src/labs2/Lab3Tree1.cpp",
+		"/home/user/workspace-java/SAKOD/src/labs/Lab_HashTable.java",
+		"/home/user/workspace-java/SAKOD/src/labs/Program.java",
+		"/home/user/workspace-php/WebProgrammingLabs/Lab2_content.json",
+		"/home/user/.config/sublime-text-3/Packages/User/PHP.sublime-build",
+		"/home/user/.config/sublime-text-3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/home/user/stop.py",
+		"/home/user/workspace-php/program.php",
+		"/home/user/Загрузки/Новая форма (Ответы) - Ответы на форму (1).csv",
+		"/home/user/Документы/База данных ДК/База активных почтовых адресов.txt",
+		"/home/user/file.txt",
+		"/home/user/Загрузки/адреса.субботник.docx",
+		"/home/user/Hello2.class",
+		"/home/user/GIT/TIJ4-code/README.md",
+		"/home/user/GIT/TIJ4-code/examples/Eclipse.py",
+		"/home/user/Hello.class",
+		"/home/user/GIT/timetableproject/TimeTableAgregator/WorkWithList.cpp",
+		"/media/user/KINGSTON/RealTimeSystems/материал по rtLinux .txt",
+		"/home/user/Загрузки/geekbrains_files-master/habr.test2.sh",
+		"/home/user/Загрузки/geekbrains_files-master/test_script.sh",
+		"/home/user/email.txt",
+		"/home/user/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/home/user/workspace-c++/SeaBattle/src/tasks.txt",
+		"/home/user/workspace-c++/SeaBattle/src/Globals.h",
+		"/home/user/eclipse_workspace c++/ListProj/list.cpp",
+		"/home/user/Загрузки/Stand by Me (1986) [1080p]/about.txt",
+		"/home/user/Stick Window",
+		"/home/user/Загрузки/Моя жизнь во Христе — cвятой Иоанн Кронштадтский.m3u",
+		"/home/user/poweroff.sh",
+		"/home/user/GIT/info-board/InfoBoard/src/org/lestvitsa/InfoBoard/Application/application.css",
+		"/home/user/GIT/info-board/InfoBoard/resources/org/lestvitsa/InfoBoard/InfoModel/default.json",
+		"/home/user/Загрузки/Dunkirk.2017.BDRip.1.46Gb.Dub.MegaPeer/Dunkirk.2017.BDRip.1.46Gb.Dub.MegaPeer.srt",
+		"/home/user/GIT/test_javafx_without_fxml/src/application/Main.java.fxtemplate",
+		"/home/user/GIT/test_javafx_without_fxml/src/application/application.css",
+		"/home/user/eclipse_workspace c++/eclipse_test_project/labs/lab18.cpp",
+		"/home/user/Загрузки/Группа ФИПМ ПСТГУ/1 курс вики.txt",
+		"/home/user/Загрузки/str.cpp",
+		"/home/user/Загрузки/files.cpp",
+		"/home/user/eclipse_workspace c++/eclipse_test_project/.settings/language.settings.xml",
+		"/home/user/workspace-c++/Лабораторные/lab20.txt",
+		"/home/user/workspace-c++/Лабораторные/lab20.cpp",
+		"/home/user/workspace-c++/Лабораторные/TestLab2.cpp"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "Sequence element.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"fill2",
+				"examples/generics/Fill2.java"
+			],
+			[
+				"css",
+				"beginner-html-site-styled-gh-pages/styles/ball_page_style.css"
+			],
+			[
+				"mainj",
+				"beginner-html-site-styled-gh-pages/scripts/balls_main.js"
+			],
+			[
+				"15",
+				"Лабораторные/lab15.cpp"
+			],
+			[
+				"la",
+				"Лабораторные/lab14.cpp"
+			],
+			[
+				"lab15",
+				"Лабораторные/lab15.cpp"
+			],
+			[
+				"seaba",
+				"SeaBattle/SeaBattle.cpp"
+			],
+			[
+				"file",
+				"My projects/test_file.cpp"
+			],
+			[
+				"фик",
+				"Список серий Фиксики.txt"
+			],
+			[
+				"фикси",
+				"Список серий Фиксики.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 272.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
