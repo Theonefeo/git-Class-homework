@@ -11,11 +11,11 @@
 	<cstdlib>
 	"SortSeq.h"
 
-1602278571 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.h
+1602577045 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.h
 	<vector>
 	<algorithm>
 
-1602278806 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.cpp
+1602577045 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 12.10.20/Sequence element/SortSeq.cpp
 	<iostream>
 	<vector>
 	<algorithm>

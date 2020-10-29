@@ -21,10 +21,6 @@ class myClass
     {
         cout<<value;
     }
-/*void myClass::setVal(int k)
-    {
-        cin>>k;
-    }*/
 int myClass::getVal()
     {
         return value;
@@ -37,52 +33,67 @@ int main()
 
     do
     {
-        system("cls");
-        //system("pause");
+        //system("clear");
         cout << "1.Enter element massiv" << endl;
         cout << "2.Delete last element massiv" << endl;
         cout << "3.Show massiv" << endl;
         cout << "4.Processing massiv" << endl;
         cout << "5.Output" << endl;
         cin.sync();
+        cout<<"Please enter command: ";
         cin>>men;
+        //system("read -rsp \"Press any key to continue...\"-n1 key");
         switch(men)
         {
             case 1:
-                    //system("cls");
-                    //system("pause");
+                    system("clear"); //for linux
+                    cout << "1.Enter element massiv" << endl;
                     int b;
                     cin>>b;
                     arr[arrN].setVal(b);
                     arrN++;
+                    system("read -rsp \"Press any key to continue...\"-n1 key"); //Esli komandi "system & cls" ne rabotaut to ispolzuu ety stroku
                     break;
             case 2:
-                   // system("cls");
-                   // system("pause");
+                    system("clear");
+                    cout << "2.Delete last element massiv" << endl;
                     arrN--;
+                    system("read -rsp \"Press any key to continue...\"-n1 key");
                     break;
             case 3:
-                    //system("cls");
-                    //system("pause");
-                    for(int i=0;i<arrN-1;i++)
+                    system("clear");
+                    cout << "3.Show massiv" << endl;
+                    for(int i=0;i<=arrN-1;i++)
                         {
                             arr[i].showVal();
                         }
+                    cout<<endl;
+                    system("read -rsp \"Press any key to continue...\"-n1 key");
                     break;
             case 4:
-                   // system("cls");
-                   // system("pause");
+                   system("clear");
+                   cout << "4.Processing massiv" << endl;
                    int a;
                    a=0;
-                    for(int i=0;i<arrN-1;i++)
+                    for(int i=0;i<=arrN-1;i++)
                         {
                             a=a+arr[i].getVal();
                         }
                         cout<<a<<"\n";
+                    system("read -rsp \"Press any key to continue...\"-n1 key");
                     break;
+            case 5:
+                   system("clear");
+                   cout<<endl<<"END OF WORK"<<endl;
+                   system("read -rsp \"Press any key to continue...\"-n1 key");
+                   break;
             default:
-                   // system("pause");
+                    system("clear"); // pod windows rabotaet."cls" pod linux - net
                     cout<<"WRONG"<<endl;
+                    cin.clear();
+                    cin.sync();
+                    men = 5;
+                    system("read -rsp \"Press any key to continue...\"-n1 key"); //Esli komandi "system & cls" ne rabotaut to ispolzuu ety stroku
                     break;
         }
     }

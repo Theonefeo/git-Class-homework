@@ -1,4 +1,4 @@
-#include <iostream>
+\#include <iostream>
 #include <vector>
 #include <cstdlib>
 #include "SortSeq.h"
@@ -40,7 +40,7 @@ int main()
         }
         case 1:
         {
-            if(Sequence) //Sequence!=nullptr
+            if(Sequence) //Sequence!=nullptrptr
             {
                 cout<<"Sequence already created\n";
             }
