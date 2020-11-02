@@ -10,7 +10,7 @@ protected:
 	int x, y; // базовая точка
 	virtual void draw() const = 0;
 public:
-	Figure(int c, int x, int y) {this->c = c; this->x = x; this->y = y;}
+	Figure(int c, int x, int y) {this->c = c; this->x = x; this->y = y; visible = false;}
 	~Figure();
 	void move(int dx, int dy); // сместить фигуру на (dx,dy) – только видимую
 	void setBorderColor(int c); //установить цвет фигуры – только видимой
@@ -20,25 +20,32 @@ public:
 	virtual void calcParams(float& perimeter, float& area) const = 0;
 	//  вычислить периметр и площадь фигуры
 };
-class Cross:: public Figure //(цвет линий, х и у центра, радиус1, радиус2, высота)
+class Cross: public Figure //(цвет линий, х и у центра, радиус1, радиус2, высота)
 {
 	public:
-	int lineColor;
-	int radius1;
-	int radius2;
-	int height;
+	int lengthLines;
+	int thicknessLines;
 
-	void setSizes(int lineColor, int x,y, int radius1, int radius2, int height);
-}
-class FilledCross:: public Cross
+    Cross(int c, int x, int y, int lengthLines, int thicknessLines) : Figure(c, x, y)
+    {
+       void setSizes(int lengthLines, int thicknessLines);
+    }
+    ~Cross();
+	void setSizes(int lengthLines, int thicknessLines);
+};
+class FilledCross: public Cross
 {
     public:
+    int fillColor;
 
-    FilledCross(int c);
+
+
+    FilledCross(int fillColor) : Cross();
+    ~FilledCross();
     void setFillColor(int c);
 
-}
-Добавить к параметрам конструктора нового дочернего класса цвет заполнения.
+};
+/*Добавить к параметрам конструктора нового дочернего класса цвет заполнения.
 
     Определить дополнительный метод у нового дочернего класса для изменения цвета заполнения:
 
@@ -51,21 +58,30 @@ class FilledCross:: public Cross
 
            (если новый цвет границы совпадает с текущим цветом заполнения, то цвет границы не изменять)
 
-
-void Cross::setSizes(int lineColor, int x,y, int radius1, int radius2, int height)
+*/
+void Cross::setSizes(int lengthLines, int thicknessLines)
 {
-	this->lineColor = lineColor;
-	this->x,y = x,y;
-	this->radius1 = radius1;
-	this->radius2 = radius2;
-	this->height = height;
+	if(visible)
+    {
+	this->lengthLinesr = lengthLines;
+	this->thicknessLines = thicknessLines;
+	}
+	else
+    {
+    this->lengthLinesr = lengthLines;
+    this->thicknessLines = thicknessLines;
+    draw();
+    }
 }
 void Figure::move(int dx, int dy)
 {
-	x = x + dx;
-	y = y + dy;
 	if (visible)
-		draw();
+    {
+        x = x + dx;
+        y = y + dy;
+        draw();
+    }
+
 }
 void Figure::setBorderColor(int c)
 {
@@ -106,7 +122,8 @@ int main()
 	figure.setVisible();
 
 	Cross cross();
-	cross.setSizes(0110, 1,1, 6, 6, 8);
+	cross.Cross(1011, 2, 3, 4, 5)
+	cross.setSizes(6, 8);
 
 
 	return 0;
