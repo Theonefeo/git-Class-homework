@@ -20,7 +20,7 @@ public:
 	virtual void calcParams(float& perimeter, float& area) const = 0;
 	//  вычислить периметр и площадь фигуры
 };
-class Cross: public Figure //(цвет линий, х и у центра, радиус1, радиус2, высота)
+class Cross: public Figure //(цвет линий, х и у центра, длина, толщина полосок)
 {
 	public:
 	int lengthLines;
@@ -40,35 +40,40 @@ class FilledCross: public Cross
 
 
 
-    FilledCross(int fillColor) : Cross();
+    FilledCross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor) : Cross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor);
     ~FilledCross();
     void setFillColor(int c);
 
 };
-/*Добавить к параметрам конструктора нового дочернего класса цвет заполнения.
-
-    Определить дополнительный метод у нового дочернего класса для изменения цвета заполнения:
-
-             void setFillColor(int c);
-
-
-    Переопределить у нового дочернего класса метод изменения цвета границы:
-
-            void setBorderColor(int c);
-
-           (если новый цвет границы совпадает с текущим цветом заполнения, то цвет границы не изменять)
-
-*/
+FilledCross:: FilledCross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor)
+{
+	this->fillColor = fillColor;	
+}
+void FilledCross::setFillColor(int c)
+{	
+	fillColor = c; //????	
+}
+void FilledCross::setBorderColor(int c)
+{ 
+	if(fillColor == c)
+	{
+	   this->c = c;
+	}
+	else 
+	{
+		c = fillColor;  
+	}		
+}
 void Cross::setSizes(int lengthLines, int thicknessLines)
 {
 	if(visible)
     {
-	this->lengthLinesr = lengthLines;
+	this->lengthLines = lengthLines;
 	this->thicknessLines = thicknessLines;
 	}
 	else
     {
-    this->lengthLinesr = lengthLines;
+    this->lengthLines = lengthLines;
     this->thicknessLines = thicknessLines;
     draw();
     }
@@ -124,6 +129,10 @@ int main()
 	Cross cross();
 	cross.Cross(1011, 2, 3, 4, 5)
 	cross.setSizes(6, 8);
+
+	FilledCross filledCross();
+	filledCross.setFillColor(1111);
+	filledCross.setBorderColor(0110);
 
 
 	return 0;
