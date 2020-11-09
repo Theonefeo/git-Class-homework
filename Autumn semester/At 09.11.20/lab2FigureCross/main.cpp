@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ protected:
 	virtual void draw() const = 0;
 public:
 	Figure(int c, int x, int y) {this->c = c; this->x = x; this->y = y; visible = false;}
-	~Figure();
+	~Figure() {}
 	void move(int dx, int dy); // сместить фигуру на (dx,dy) – только видимую
 	void setBorderColor(int c); //установить цвет фигуры – только видимой
 	int getBorderColor() const; // получить цвет
@@ -30,7 +31,7 @@ class Cross: public Figure //(цвет линий, х и у центра, дли
     {
        setSizes(lengthLines, thicknessLines);
     }
-    ~Cross();
+    ~Cross() {}
 	void setSizes(int lengthLines, int thicknessLines);
 	void draw() const;
 	void calcParams(float& perimeter, float& area) const;
@@ -66,13 +67,21 @@ void FilledCross::setBorderColor(int c)
 		c = fillColor;
 	}
 }*/
-void draw() const
+void Cross::draw() const
 {
-    cout<<;
+    cout<<"x, y: "<<x<<","<<y<<endl;
+    cout<<"Color: "<<getBorderColor()<<endl;
+}
+void Cross::calcParams(float& perimeter, float& area) const
+{
+    perimeter = ((lengthLines/2 - thicknessLines/2)*8) + thicknessLines * 4;
+
+    area = ((thicknessLines*(lengthLines/2 - thicknessLines/2))^4);
+
 }
 void Cross::setSizes(int lengthLines, int thicknessLines)
 {
-	if(visible)
+	if(isVisible())
     {
 	this->lengthLines = lengthLines;
 	this->thicknessLines = thicknessLines;
@@ -102,7 +111,7 @@ void Figure::setBorderColor(int c)
 		draw();
 	}
 }
-void Figure::setVisible(bool isVisible = true)
+void Figure::setVisible(bool isVisible)
 {
 	bool old_visible = visible; //memorizing the visibility status of the figure
 	visible = isVisible;
@@ -122,20 +131,27 @@ bool Figure::isVisible() const
 
 int main()
 {
-	Figure figure(1010, 0, 0);
+	/*Figure figure(1010, 0, 0);
 	figure.move(5, 5);
 	figure.setBorderColor(0010);
 	figure.getBordercolor();
 	figure.isVisible();
-	figure.setVisible();
+	figure.setVisible();*/
 
-	Cross cross();
-	cross.Cross(1011, 2, 3, 4, 5)
+	Cross cross(1010, 0, 0, 6, 2);
+	cross.move(5, 5);
+	cross.setBorderColor(0010);
+	cout<<endl<<cross.getBorderColor()<<endl;
+	cout<<cross.isVisible()<<endl;
+	cross.setVisible();
 	cross.setSizes(6, 8);
-
-	FilledCross filledCross();
+	float perimeter;
+    float area;
+	cross.calcParams(perimeter, area);
+	cout<<"Perimeter: "<<perimeter<<" Area: "<<area<<endl;
+	/*FilledCross filledCross();
 	filledCross.setFillColor(1111);
-	filledCross.setBorderColor(0110);
+	filledCross.setBorderColor(0110);*/
 
 
 	return 0;
