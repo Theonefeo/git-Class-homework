@@ -1,5 +1,14 @@
 # depslib dependency file v1.0
-1604921753 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 09.11.20\lab2figurecross\main.cpp
+1604937408 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 09.11.20\lab2figurecross\main.cpp
 	<iostream>
+	<cmath>
+	"classFigureCross.h"
+
+1604937854 c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 09.11.20\lab2figurecross\classfigurecross.h
+	<iostream>
+
+1604934258 source:c:\users\student\desktop\karpov 3 kyrc\git-class-homework\autumn semester\at 09.11.20\lab2figurecross\classfigurecross.cpp
+	<iostream>
+	"classFigureCross.h"
 	<cmath>
 
