@@ -35,7 +35,7 @@ class Cross: public Figure //(цвет линий, х и у центра, дли
 	void draw() const;
 	void calcParams(float& perimeter, float& area) const;
 };
-class FilledCross: public Cross
+/*class FilledCross: public Cross
 {
     public:
     int fillColor;
@@ -52,19 +52,23 @@ class FilledCross: public Cross
 };
 
 void FilledCross::setFillColor(int c)
-{	
-	fillColor = c; //????	
+{
+	fillColor = c; //????
 }
 void FilledCross::setBorderColor(int c)
-{ 
+{
 	if(fillColor == c)
 	{
 	   this->c = c;
 	}
-	else 
+	else
 	{
-		c = fillColor;  
-	}		
+		c = fillColor;
+	}
+}*/
+void draw() const
+{
+    cout<<;
 }
 void Cross::setSizes(int lengthLines, int thicknessLines)
 {
