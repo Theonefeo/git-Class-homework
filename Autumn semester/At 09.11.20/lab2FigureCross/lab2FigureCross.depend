@@ -12,3 +12,16 @@
 	"classFigureCross.h"
 	<cmath>
 
+1605531112 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 09.11.20/lab2FigureCross/main.cpp
+	<iostream>
+	<cmath>
+	"classFigureCross.h"
+
+1605633192 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 09.11.20/lab2FigureCross/classFigureCross.h
+	<iostream>
+
+1605529399 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 09.11.20/lab2FigureCross/classFigureCross.cpp
+	<iostream>
+	"classFigureCross.h"
+	<cmath>
+

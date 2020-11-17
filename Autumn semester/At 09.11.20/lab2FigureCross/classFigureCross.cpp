@@ -2,30 +2,6 @@
 #include "classFigureCross.h"
 #include <cmath>
 
-void Cross::draw() const
-{
-    cout<<"x, y: "<<x<<","<<y<<endl;
-    cout<<"Color: "<<getBorderColor()<<endl;
-}
-void Cross::calcParams(float& perimeter, float& area) const
-{
-    perimeter = ((lengthLines/2. - thicknessLines/2.)*8) + thicknessLines * 4;
-    area = pow((thicknessLines*(lengthLines/2. - thicknessLines/2.)),4);
-}
-void Cross::setSizes(float lengthLines, float thicknessLines)
-{
-	if(isVisible())
-    {
-	this->lengthLines = lengthLines;
-	this->thicknessLines = thicknessLines;
-	}
-	else
-    {
-    this->lengthLines = lengthLines;
-    this->thicknessLines = thicknessLines;
-    draw();
-    }
-}
 void Figure::move(int dx, int dy)
 {
 	if (visible)
@@ -59,4 +35,52 @@ int Figure::getBorderColor() const
 bool Figure::isVisible() const
 {
 	return visible;
+}
+void Cross::draw() const
+{
+    cout<<"Figure - Cross"<<endl;
+    cout<<"x, y:  "<<x<<","<<y<<endl;
+    cout<<"BorderColor:  "<<getBorderColor()<<endl;
+    cout<<"lengthLines  "<<lengthLines<<endl;
+    cout<<"thicknessLines  "<<thicknessLines<<endl;
+}
+void Cross::calcParams(float& perimeter, float& area) const
+{
+    perimeter = ((lengthLines/2. - thicknessLines/2.)*8) + thicknessLines * 4;
+    area = pow((thicknessLines*(lengthLines/2. - thicknessLines/2.)),4);
+}
+void Cross::setSizes(float lengthLines, float thicknessLines)
+{
+    this->lengthLines = lengthLines;
+	this->thicknessLines = thicknessLines;
+
+	if(isVisible())
+    {
+    draw();
+	}
+}
+void FilledCross::draw() const
+{
+    cout<<"Figure - FilledCross"<<endl;
+    cout<<"x, y:  "<<x<<","<<y<<endl;
+    cout<<"BorderColor:  "<<getBorderColor()<<endl;
+    cout<<"lengthLines  "<<lengthLines<<endl;
+    cout<<"thicknessLines  "<<thicknessLines<<endl;
+    cout<<"fillColor  "<<fillColor<<endl;
+}
+void FilledCross::setFillColor(int c)
+{
+	fillColor = c;
+	if(isVisible())
+    {
+    draw();
+	}
+
+}
+void FilledCross::setBorderColor(int c)
+{
+	if(fillColor != c)
+	{
+	   Figure::setBorderColor(c);
+	}
 }

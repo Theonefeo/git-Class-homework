@@ -5,23 +5,23 @@ using namespace std;
 
 class Figure
 {
-	int c; //цвет
+	int c; //Color
 	bool visible;
 protected:
-	int x, y; // базова€ точка
+	int x, y; //base point
 	virtual void draw() const = 0;
 public:
 	Figure(int c, int x, int y) {this->c = c; this->x = x; this->y = y; visible = false;}
-	~Figure() {}
-	void move(int dx, int dy); // сместить фигуру на (dx,dy) Ц только видимую
-	void setBorderColor(int c); //установить цвет фигуры Ц только видимой
-	int getBorderColor() const; // получить цвет
-	void setVisible(bool isVisible = true);    // показать/спр€тать фигуру
-	bool isVisible() const; // признак видимости
+	virtual ~Figure() {cout<<endl<<"delete object Figure"<<endl;}
+	void move(int dx, int dy); // Move the shape to (dx, dy) - only the visible
+	void setBorderColor(int c); //to set the color of the shape - only visible
+	int getBorderColor() const; // getting color
+	void setVisible(bool isVisible = true);    // show/hide shape
+	bool isVisible() const; // visibility flag
 	virtual void calcParams(float& perimeter, float& area) const = 0;
-	//  вычислить периметр и площадь фигуры
+	//  calculate the perimeter and area of the shape
 };
-class Cross: public Figure //(цвет линий, х и у центра, длина, толщина полосок)
+class Cross: public Figure //(color line, x and y center, length, thickness)
 {
 	public:
 	float lengthLines;
@@ -31,23 +31,23 @@ class Cross: public Figure //(цвет линий, х и у центра, длина, толщина полосок)
     {
        setSizes(lengthLines, thicknessLines);
     }
-    ~Cross() {}
+    ~Cross() {cout<<endl<<"delete object Cross"<<endl;}
 	void setSizes(float lengthLines, float thicknessLines);
 	void draw() const;
 	void calcParams(float& perimeter, float& area) const;
 };
-/*class FilledCross: public Cross
+class FilledCross: public Cross
 {
     public:
     int fillColor;
 
-
-
-    FilledCross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor) : Cross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor)
+    FilledCross(int c, int x, int y, int lengthLines, int thicknessLines, int fillColor) : Cross(c, x, y, lengthLines, thicknessLines)
 	{
 		this->fillColor = fillColor;
 	}
-    ~FilledCross();
+    ~FilledCross() {cout<<endl<<"delete object FilledCross"<<endl;}
     void setFillColor(int c);
+    void setBorderColor(int c);
+    void draw() const;
 
-};*/
+};
