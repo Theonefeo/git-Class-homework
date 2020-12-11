@@ -1,4 +1,12 @@
 # depslib dependency file v1.0
-1607646650 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 16.12.2020/OverloadingOperator/main.cpp
+1607719188 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 16.12.2020/OverloadingOperator/main.cpp
+	<iostream>
+	"OperatorOver.h"
+
+1607719174 source:/home/feodor/git-coursework/git-Class-homework/Autumn semester/At 16.12.2020/OverloadingOperator/OperatorOver.cpp
+	<iostream>
+	"OperatorOver.h"
+
+1607719153 /home/feodor/git-coursework/git-Class-homework/Autumn semester/At 16.12.2020/OverloadingOperator/OperatorOver.h
 	<iostream>
 
