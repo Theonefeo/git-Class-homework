@@ -15,7 +15,8 @@ class Matrix
         matrix = new int[rows_count*columns_count];
         for(int i=0; i<rows_count*columns_count; i++)
         {
-                matrix[i]= 0;
+                matrix[i]= 0; /*3x4 -> элементов не 12 как может показать,
+                а: 0...3 х 0....4 или 4х5 = 20 - столько элементов в массивe*/
         }
     };
     void setMatrixElement(int rows_count, int columns_count, int value);
@@ -25,11 +26,14 @@ class Matrix
 };
 void Matrix::setMatrixElement(int i, int j, int value)
 {
-    matrix[i] = value;
+    matrix[(i*(j+1))+j] = value; /*Если мы хотим получить в массиве двумерном число по коор-там 1х2 то это будет
+    элемент 6 в матрице т.к отсчет компилятор ведет от 0 (0..1 - 2 эл. 0...2 - 3 элемента - следовательно 2х3 = 6)
+    потому по такой формуле мы получим индекс одномерного массива - 5 - поскольку компилятор считает от 0.....5 = 6 следовательно
+    значение будет по человеческим меркам лежать в 6 элементов а по меркам компилятора - в 5 */
 }
 int Matrix::getMatrixElement(int i, int j)
 {
-    return  matrix[(i+j)/2];
+    return  matrix[(i*(j+1))+j];
 }
 
 int main()
@@ -37,57 +41,11 @@ int main()
     int value = 42;
     int rows_count = 3;
     int columns_count = 4;
-    //int matrix[matrixSize][matrixSize];
     Matrix matrix(rows_count, columns_count);
-    int i = 1;
-    int j = 2;
+    int i = 3;
+    int j = 4;
     matrix.setMatrixElement(i, j, value);
     cout << matrix.getMatrixElement(i, j);
-    /*matrix.print();
-    a.get_rows_count();
-    b.get_columns_count();*/
-    /*В классе сделай поля double **matrix; int m; int n;
-    в констукторе сделай так:
-    matrix = new double*[m]; // выделяем массив из m указателей типа double
-    for (int count = 0; count < n; ++count)
-        matrix[count] = new double[n]; // а это наши столбцы
-    В деструкторе напиши
-    for (int count = 0; count < m; ++count) // удаляем каждую строку
-        delete[] matrix[count];
-    delete[] matrix; // это следует выполнять в конце
-
-    m - обращение по номеру строки, n - по номеру элемента в матрице
-
-
-    for(int i = 0; i < m; ++i){
-   for(int j = 0; j<n; ++j){
-        resultArray[i][j] = matrix1[i][j] + matrix2[i][j];
-   }
-}
-
- для вычитания двух матриц нужно
-
-for(int i = 0; i < m; ++i){
-   for(int j = 0; j<n; ++j){
-        resultArray[i][j] = matrix1[i][j] - matrix2[i][j];
-   }
-}
-
- для сравнения двух матриц нужно
-
-for(int i = 0; i < m; ++i){
-   for(int j = 0; j<n; ++j){
-        if( matrix1[i][j] != matrix2[i][j])
-            return false;
-   }
-}
-return true;
-ы
-if(obj1.m == obj2.m && obj1.n==obj2.n)
-{выполнять сложение}
-
-*/
-
 
     return 0;
 }
