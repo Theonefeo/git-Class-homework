@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1612804805 source:/home/feodor/git-coursework/methods of computation/Lab1/main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
