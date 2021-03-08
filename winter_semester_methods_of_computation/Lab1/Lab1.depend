@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1612804805 source:/home/feodor/git-coursework/methods of computation/Lab1/main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1613556717 source:/home/feodor/git-coursework/git-Class-homework/winter semester::methods of computation/Lab1/main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1614619713 source:/home/feodor/git-coursework/git-Class-homework/winter_semester_methods_of_computation/Lab1/main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
