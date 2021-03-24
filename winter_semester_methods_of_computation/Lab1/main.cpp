@@ -142,24 +142,27 @@ double* MethodGausa(Matrix &matrix)
     }
     matrix.print();
         //*
-        double *MassivFreeTerms;
+        //double *MassivFreeTerms;
 
         for(int jj = matrix.minColumnsRowsCount() - 1; jj!=0; jj--)
         {
-            double kf;
+            float kf;
 
-            double b; //свободные члены
-
+            float b; //свободные члены
+            //cout<<"!!!"<<jj<<"<<"<<matrix.getMatrixElement(jj, matrix.getColumns_Count()-1)<<">>>\n";
             for(int dd = jj -1; dd>=0; dd--)
             {
                 kf = matrix.getMatrixElement(dd, jj);
                 matrix.setMatrixElement(dd, jj, 0);
 
                 b = matrix.getMatrixElement(dd, matrix.getColumns_Count()-1) - matrix.getMatrixElement(jj, matrix.getColumns_Count()-1)*kf; //Закрепляемся с помощью jj на столбце и c помощью dd бегаем по строкам
+
                 matrix.setMatrixElement(dd, matrix.getColumns_Count() -1 , b);
             }
 
         }
+
+
 
 //        for(int i = 0)
 
@@ -195,7 +198,14 @@ void Formula(Matrix &matrix, int rows_count, int columns_count, float value)
         }
         cout << endl;
 	}
+
 }
+vector GetLastColumn(Matrix matrix)
+{
+
+
+}
+
 
 int main()
 {
@@ -218,10 +228,26 @@ srand(time(0));
     MethodGausa(matrix);
     matrix.print();
 
-    rows_count = 10;
-    columns_count = 10;
+    vector<double> solution = GetLastColumn(matrix);
+
+
+    // restore original equation
     Formula(matrix, rows_count, columns_count, value);
-    matrix.print();
+
+    double* Y2 = MultMatrixVector(matrix, solution);
+
+    bool ok = CompareWithLastColumn(matrix, Y2, eps=0.0000001); // i == j xxx abs(i-j) < eps
+
+    //delete[] solution; Если использовать double* solution то надо будет потом использовать delete[] solution; если использовать вектор то delete не нужен будет.
+    delete[] Y2;
+
+
+
+    //rows_count = 10;
+    //columns_count = 10;
+    //Formula(matrix, rows_count, columns_count, value);
+    //matrix.print();
+
 
 
     return 0;
