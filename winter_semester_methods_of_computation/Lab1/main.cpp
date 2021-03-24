@@ -67,11 +67,18 @@ void Matrix::print()
 }
 void Matrix::setMatrixElement(int i, int j, float value)
 {
+if(0<=i && i<rows_count && 0<=j && j<columns_count)
 	matrix[i][j] = value;
+else
+cout<<"errorSET";
+
 }
 double Matrix::getMatrixElement(int i, int j)
 {
+if(0<=i && i<rows_count && 0<=j && j<columns_count)
 return matrix[i][j];
+else
+cout<<"errorGET";
 }
 
 int Matrix::minColumnsRowsCount()
@@ -81,7 +88,7 @@ int Matrix::minColumnsRowsCount()
     else
         return rows_count;
 }
-void MethodGausa(Matrix &matrix)
+double* MethodGausa(Matrix &matrix)
 {
     for(int i=0;i<matrix.minColumnsRowsCount(); i++)//ВЫБИРАЕМ МИНИМУМ; i++ /// Почему getColumns_Count(), а не min(col_count, row_count)?
     {
@@ -104,8 +111,8 @@ void MethodGausa(Matrix &matrix)
             matrix.setMatrixElement(i,j, MatrixElement);
         }
         //Делим строку с наибольшим главным элементом
-        int a;
-        int c;
+        double a;
+        double c;
         for(j = 0; j<matrix.getColumns_Count(); j++)
         {
             /// j это номер строки, а не столбца - см. условие выхода из цикла.
@@ -114,8 +121,8 @@ void MethodGausa(Matrix &matrix)
                 matrix.setMatrixElement(i, j, a/c);
         }
         //приведение всей колонки к нулю кроме главного элемента (чтобы были нулевые элемнты под главным)
-        int b;
-        int d;
+
+        double d;
         for(int ii = i+1; ii <matrix.getRows_Count(); ii++) /// Почему начинаете с первой строки, а не с i+1?
         {
             double koef = matrix.getMatrixElement(ii,i); //ii - номер строки, i - номер столбца.
@@ -123,55 +130,45 @@ void MethodGausa(Matrix &matrix)
 /*
     Идем по строкам находясь на одном столбце при этом счетчик - до конца строчек для того чтобы не выйти за границы
 */
-            for(j = 0; j<matrix.getRows_Count(); j++)
+            for(j = 0; j<matrix.getColumns_Count(); j++)
             {
 
                 d = matrix.getMatrixElement(ii,j) - matrix.getMatrixElement(i,j)*koef;
                 matrix.setMatrixElement(ii, j, d);
+
             }
         }
 
-        /////////////
-        /*SmenaStrok(matrix.getRows_Count());
-        for(int j = 0; j<minColumnsRowsCount(); j++) //Идем по столбцам
-        {
-            SmenaStrok(matrix.getColumns_Count());
-            void SmenaStrok(int Count)
-            {
-                for(int ii = i+1; ii <Count; ii++) /// Почему начинаете с первой строки, а не с i+1?
-                {
-                    double koef = matrix.getMatrixElement(ii,i); //ii - номер строки, i - номер столбца.
-
-
-            Идем по строкам находясь на одном столбце при этом счетчик - до конца строчек для того чтобы не выйти за границы
-
-                    for(j = 0; j<matrix.getRows_Count(); j++)
-                    {
-
-                        d = matrix.getMatrixElement(ii,j) - matrix.getMatrixElement(i,j)*koef;
-                        matrix.setMatrixElement(ii, j, d);
-                    }
-                }
-
-
-            }
-        }*/
-        //////////
-
     }
+    matrix.print();
+        //*
+        double *MassivFreeTerms;
+
+        for(int jj = matrix.minColumnsRowsCount() - 1; jj!=0; jj--)
+        {
+            double kf;
+
+            double b; //свободные члены
+
+            for(int dd = jj -1; dd>=0; dd--)
+            {
+                kf = matrix.getMatrixElement(dd, jj);
+                matrix.setMatrixElement(dd, jj, 0);
+
+                b = matrix.getMatrixElement(dd, matrix.getColumns_Count()-1) - matrix.getMatrixElement(jj, matrix.getColumns_Count()-1)*kf; //Закрепляемся с помощью jj на столбце и c помощью dd бегаем по строкам
+                matrix.setMatrixElement(dd, matrix.getColumns_Count() -1 , b);
+            }
+
+        }
+
+//        for(int i = 0)
+
+
+        //
 }
-
-int main()
+void Formula(Matrix &matrix, int rows_count, int columns_count, float value)
 {
-
-srand(time(0));
-    //cout << "Please enter the quantity!" << endl;
-    float value = 42;
-	int rows_count = 10;
-	int columns_count = 10;
-	Matrix matrix(rows_count, columns_count);
-	matrix.print();
-	for (int i = 0; i < rows_count; i++)
+    for (int i = 0; i < rows_count; i++)
 	{
         for(int j = 0; j< columns_count; j++)
         {
@@ -198,6 +195,19 @@ srand(time(0));
         }
         cout << endl;
 	}
+}
+
+int main()
+{
+
+srand(time(0));
+    //cout << "Please enter the quantity!" << endl;
+    float value = 42;
+	int rows_count = 10;
+	int columns_count = 11;
+	Matrix matrix(rows_count, columns_count);
+	matrix.print();
+    Formula(matrix, rows_count, columns_count, value);
     //matrix.setMatrixElement(i, j, value);
 
     matrix.print();
@@ -208,6 +218,10 @@ srand(time(0));
     MethodGausa(matrix);
     matrix.print();
 
+    rows_count = 10;
+    columns_count = 10;
+    Formula(matrix, rows_count, columns_count, value);
+    matrix.print();
 
 
     return 0;
