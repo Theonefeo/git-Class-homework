@@ -2,8 +2,10 @@
 #include <ctime>
 #include <cstdlib>
 #include <cmath>
+#include <vector>
 #define DWR cout<<"!!!"<<endl;  /// Вставляйте слово DWR в код - это будет точка отладочного вывода.
 
+//#define abs(a) (((a)>=0) ? (a) : -(a))
 using namespace std;
 
 class Matrix
@@ -12,6 +14,8 @@ class Matrix
     int rows_count;
     int columns_count;
     double **matrix;
+    Matrix(const Matrix &matrix) {};
+
 
     public:
     Matrix(int rows_count, int columns_count)
@@ -45,6 +49,7 @@ class Matrix
 	int getColumns_Count() {
 	return columns_count;
 	}
+
 	~Matrix();
 
 };
@@ -200,9 +205,61 @@ void Formula(Matrix &matrix, int rows_count, int columns_count, float value)
 	}
 
 }
-vector GetLastColumn(Matrix matrix)
+vector<double> GetLastColumn(Matrix &matrix)
 {
+    vector<double> p;
+    for(int i=0; i<matrix.minColumnsRowsCount(); i++)
+    {
+        p.push_back(matrix.getMatrixElement(i, matrix.getColumns_Count() - 1));
+    }
 
+    return p;
+
+}
+vector<double> MultMatrixVector(Matrix &matrix, vector<double> solution)
+{
+        vector<double> pp;
+        double sum, sum1 = 0;
+
+        for(int i=0; i<matrix.getRows_Count() - 1; i++) //we stand on the column of the matrix
+        {
+
+            for(int j=0; j<solution.size(); j++) //we go through the rows and sum their multiplication by a vector
+            {
+                sum1 = matrix.getMatrixElement(i, j) * solution.at(j);
+                sum = sum + sum1;
+
+            }
+
+            pp.push_back(sum);
+            sum = 0;
+        }
+
+
+        return pp;
+
+}
+bool CompareWithLastColumn(Matrix &matrix, vector<double> Y2, double eps)
+{
+    bool flag = true;
+    matrix.print();
+    for(int i=0; i<Y2.size(); i++)
+    {
+        if(abs(matrix.getMatrixElement(i, matrix.getColumns_Count() - 1)-Y2.at(i)) < eps)
+        {
+            cout<<"ok " << matrix.getMatrixElement(i, matrix.getColumns_Count() - 1)<<endl;
+        }
+        else
+        {
+         cout<<"no! " << matrix.getMatrixElement(i, matrix.getColumns_Count() - 1)<<endl;
+         cout<<Y2.at(i)<<endl;
+         cout<<abs(matrix.getMatrixElement(i, matrix.getColumns_Count() - 1)-Y2.at(i))<<endl;
+         flag = false;
+        }
+
+    }
+
+    return flag;
 
 }
 
@@ -213,8 +270,8 @@ int main()
 srand(time(0));
     //cout << "Please enter the quantity!" << endl;
     float value = 42;
-	int rows_count = 10;
-	int columns_count = 11;
+	int rows_count = 3;
+	int columns_count = 2;
 	Matrix matrix(rows_count, columns_count);
 	matrix.print();
     Formula(matrix, rows_count, columns_count, value);
@@ -234,12 +291,14 @@ srand(time(0));
     // restore original equation
     Formula(matrix, rows_count, columns_count, value);
 
-    double* Y2 = MultMatrixVector(matrix, solution);
+    vector<double> Y2 = MultMatrixVector(matrix, solution);
 
-    bool ok = CompareWithLastColumn(matrix, Y2, eps=0.0000001); // i == j xxx abs(i-j) < eps
+
+    double eps=0.001;
+    bool ok = CompareWithLastColumn(matrix, Y2, eps); // i == j xxx abs(i-j) < eps
 
     //delete[] solution; Если использовать double* solution то надо будет потом использовать delete[] solution; если использовать вектор то delete не нужен будет.
-    delete[] Y2;
+//    delete[] Y2;
 
 
 
