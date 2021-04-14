@@ -5,7 +5,6 @@
 #include <vector>
 #define DWR cout<<"!!!"<<endl;  /// Вставляйте слово DWR в код - это будет точка отладочного вывода.
 
-//#define abs(a) (((a)>=0) ? (a) : -(a))
 using namespace std;
 
 class Matrix
@@ -14,7 +13,7 @@ class Matrix
     int rows_count;
     int columns_count;
     double **matrix;
-    Matrix(const Matrix &matrix) {};
+    Matrix(const Matrix &matrix) {}; //Конструктор копирования сделан приватным чтобы при передаче матрицы в функции не копировалась матрица старая в новую полностью (поскольку далее выпадает ошибка), но передается в функции ссылка на нее, чтобы работать с этой матрицей а не с ее копированной копией
 
 
     public:
@@ -29,14 +28,15 @@ class Matrix
 
             matrix[i] = new double[columns_count];
 
+            int j=0;
 			for(int j=0; j<columns_count;j++)
 			{
-                matrix[i][j] = rand()%10;
-            }
 
-		}
-     //cout<<matrix<<" "<<*((long*)(((char*)matrix)-8))<<"Konst\n";
-	}
+                matrix[i][j] = rand()%10;
+//                cin>>matrix[i][j];
+            }
+        }
+    }
 	void setMatrixElement(int rows_count, int columns_count, float value);
 	double getMatrixElement(int rows_count, int columns_count);
 	void print();
@@ -55,7 +55,6 @@ class Matrix
 };
 Matrix::~Matrix()
 {
-    //cout<<matrix<<" "<<*((long*)(((char*)matrix)-8))<<"Destr\n";
 	delete[] matrix;
 }
 void Matrix::print()
@@ -103,30 +102,37 @@ double* MethodGausa(Matrix &matrix)
         //Нахождение наибольшего элемента в колонке
         for(j=i+1; j<matrix.getRows_Count(); j++) /// почему с 1-й строки каждый раз ищем? надо с i+1.
         {
-            if(matrix.getMatrixElement(j /*- номер строки  */ , i /*- номер столбца*/ )>matrix.getMatrixElement(x, i)) /// эм, а почему это j задаёт номер колонки - колонку то мы рассматриваем одну (i-ю). А вот строки меняются.
+            if(matrix.getMatrixElement(j /*- номер строки  */ , i /*- номер столбца*/ )>matrix.getMatrixElement(x, i))
                 x = j; //запоминаем номер строки с гланым элементом
         }
-         /// n=j ?????? n = matrix.getRows_Count()+1, а это за границами массива!
+        cout<<"Main element in columns \n";
+        cout<<matrix.getMatrixElement(i,j)<<endl;
+        matrix.print();
+
         double MatrixElement;
         //Смена строчек(если нашли наибольшую то смеянем ее с первой строкой)
-        for(j = 0; j<matrix.getColumns_Count() - 1; j++) // j перебирает колонки :)
+        for(j = 0; j<matrix.getColumns_Count(); j++) // j перебирает колонки :)
         {
             MatrixElement = matrix.getMatrixElement(x /*- номер строки*/, j);
             matrix.setMatrixElement(x, j,  matrix.getMatrixElement(i, j));
             matrix.setMatrixElement(i,j, MatrixElement);
         }
+        cout<<"Changing lines \n";
+        matrix.print();
         //Делим строку с наибольшим главным элементом
         double a;
         double c;
+        c = matrix.getMatrixElement(i, i);
         for(j = 0; j<matrix.getColumns_Count(); j++)
         {
-            /// j это номер строки, а не столбца - см. условие выхода из цикла.
                 a = matrix.getMatrixElement(i, j);
-                c = matrix.getMatrixElement(i, i);
+
+                //cout<<"!!!!!!!!!!!!"<<i<<" "<<j<<" "<<a<<" "<<c<<" "<<a/c<<" "<<endl;
                 matrix.setMatrixElement(i, j, a/c);
         }
+        cout<<"Dividing the row with the largest main element ";
+        matrix.print();
         //приведение всей колонки к нулю кроме главного элемента (чтобы были нулевые элемнты под главным)
-
         double d;
         for(int ii = i+1; ii <matrix.getRows_Count(); ii++) /// Почему начинаете с первой строки, а не с i+1?
         {
@@ -140,21 +146,23 @@ double* MethodGausa(Matrix &matrix)
 
                 d = matrix.getMatrixElement(ii,j) - matrix.getMatrixElement(i,j)*koef;
                 matrix.setMatrixElement(ii, j, d);
+                cout<<"String Conversion \n";
+                cout<<matrix.getMatrixElement(ii, j);
 
             }
+            matrix.print();
         }
+        cout<<"Reducing the entire column to zero except for the main element \n";
+        matrix.print();
 
     }
     matrix.print();
-        //*
-        //double *MassivFreeTerms;
 
         for(int jj = matrix.minColumnsRowsCount() - 1; jj!=0; jj--)
         {
             float kf;
 
             float b; //свободные члены
-            //cout<<"!!!"<<jj<<"<<"<<matrix.getMatrixElement(jj, matrix.getColumns_Count()-1)<<">>>\n";
             for(int dd = jj -1; dd>=0; dd--)
             {
                 kf = matrix.getMatrixElement(dd, jj);
@@ -166,13 +174,8 @@ double* MethodGausa(Matrix &matrix)
             }
 
         }
-
-
-
-//        for(int i = 0)
-
-
-        //
+        cout<<"Reverse Gauss stroke \n";
+        matrix.print();
 }
 void Formula(Matrix &matrix, int rows_count, int columns_count, float value)
 {
@@ -234,8 +237,6 @@ vector<double> MultMatrixVector(Matrix &matrix, vector<double> solution)
             pp.push_back(sum);
             sum = 0;
         }
-
-
         return pp;
 
 }
@@ -268,21 +269,14 @@ int main()
 {
 
 srand(time(0));
-    //cout << "Please enter the quantity!" << endl;
     float value = 42;
-	int rows_count = 3;
-	int columns_count = 2;
+	int rows_count = 10;
+	int columns_count =11;
 	Matrix matrix(rows_count, columns_count);
 	matrix.print();
     Formula(matrix, rows_count, columns_count, value);
-    //matrix.setMatrixElement(i, j, value);
-
     matrix.print();
-	//matrix.print();
-	//i = 2;
-	//j = 2;
-    //cout << matrix.getMatrixElement(i, j);
-    MethodGausa(matrix);
+	MethodGausa(matrix);
     matrix.print();
 
     vector<double> solution = GetLastColumn(matrix);
@@ -297,10 +291,6 @@ srand(time(0));
     double eps=0.001;
     bool ok = CompareWithLastColumn(matrix, Y2, eps); // i == j xxx abs(i-j) < eps
 
-    //delete[] solution; Если использовать double* solution то надо будет потом использовать delete[] solution; если использовать вектор то delete не нужен будет.
-//    delete[] Y2;
-
-
 
     //rows_count = 10;
     //columns_count = 10;
@@ -311,9 +301,3 @@ srand(time(0));
 
     return 0;
 }
-
-/*Здесь действительно есть где запутаться. Вот список правильных утверждений для самопроверки:
-* Переменная AAA, которая бегает от 0 до rows_count - это номер строки. Это первый индекс  matrix[AAA][_]
-* Переменная BBB которая бегает от 0 до columns_count - это номер столбца. Это второй индекс матрицы matrix[_][BBB]
-* в строке columns_count элементов (да!)
-* в столбце rows_count элементов.*/
