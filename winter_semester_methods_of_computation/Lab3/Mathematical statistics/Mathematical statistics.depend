@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1618405626 source:/home/feodor/git-coursework/git-Class-homework/winter_semester_methods_of_computation/Lab2/Mathematical statistics/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<random>
+	<vector>
+
+1621417560 source:/home/feodor/git-coursework/git-Class-homework/winter_semester_methods_of_computation/Lab3/Mathematical statistics/main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<random>
+	<vector>
+	<fstream>
+
