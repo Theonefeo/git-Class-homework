@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1622638369 source:/home/feodor/git-coursework/git-Class-homework/winter_semester_methods_of_computation/CourseWork/CourseWork/main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+
