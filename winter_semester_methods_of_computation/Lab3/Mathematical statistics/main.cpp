@@ -21,8 +21,8 @@ int main()
 
 
     int a;
-    //cout<<a;
-    /*
+
+
     vector<double> Sequence;
     ofstream fout("Sequence.txt");
 
@@ -43,7 +43,10 @@ int main()
 
     fout.close();
 
-    fout.open("Sequence.txt");*/
+    fout.open("Sequence.txt");
+
+
+
     vector<double> det;
     ifstream fin("Sequence.txt");
     ofstream fout("Det1.txt");
