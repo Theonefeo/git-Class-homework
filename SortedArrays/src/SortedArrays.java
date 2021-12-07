@@ -11,7 +11,7 @@ public class SortedArrays {
    public static void main(String[] args){
 
       int[] array = mergeArrays();
-      
+
       System.out.println("SortedArrays");
    }
    public static int[] mergeArrays(){
